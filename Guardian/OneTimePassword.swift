@@ -22,12 +22,12 @@
 
 import Foundation
 
-struct TOTP {
+public struct TOTP {
 
     let hmac: A0HMAC
     let period: Int
 
-    init?(withKey key: Data, period: Int, algorithm: String) {
+    public init?(withKey key: Data, period: Int, algorithm: String) {
         guard let hmac = A0HMAC(algorithm: algorithm, key: key) else {
             return nil
         }
@@ -36,7 +36,7 @@ struct TOTP {
         self.period = period
     }
 
-    func generate(digits: Int, counter: Int) -> String {
+    public func generate(digits: Int, counter: Int) -> String {
         var t = UInt64(counter / period).bigEndian
         let buffer = Data(bytes: &t, count: MemoryLayout<UInt64>.size);
         let digestData = hmac.sign(buffer)

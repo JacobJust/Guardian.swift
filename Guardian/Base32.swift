@@ -22,7 +22,7 @@
 
 import Foundation
 
-class Base32 {
+public class Base32 {
 
     private static let paddingAdjustment: [Int] = [1, 1, 1, 2, 3, 3, 4, 5]
     private static let __: UInt8 = 255
@@ -45,7 +45,7 @@ class Base32 {
         __,__,__,__, __,__,__,__, __,__,__,__, __,__,__,__,  // 0xF0 - 0xFF
     ]
 
-    static func decode(string: String, decodingTable: [UInt8] = defaultDecodingTable) -> Data? {
+    public static func decode(string: String, decodingTable: [UInt8] = defaultDecodingTable) -> Data? {
         let encoding = string.replacingOccurrences(of: "=", with: "")
         guard let encodedData = encoding.data(using: .ascii) else {
             return nil
