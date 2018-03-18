@@ -26,7 +26,7 @@ public class Base32 {
 
     private static let paddingAdjustment: [Int] = [1, 1, 1, 2, 3, 3, 4, 5]
     private static let __: UInt8 = 255
-    private static let defaultDecodingTable: [UInt8] = [
+    public static let defaultDecodingTable: [UInt8] = [
         __,__,__,__, __,__,__,__, __,__,__,__, __,__,__,__,  // 0x00 - 0x0F
         __,__,__,__, __,__,__,__, __,__,__,__, __,__,__,__,  // 0x10 - 0x1F
         __,__,__,__, __,__,__,__, __,__,__,__, __,__,__,__,  // 0x20 - 0x2F
