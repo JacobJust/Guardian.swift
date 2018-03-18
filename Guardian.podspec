@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Guardian'
-  s.version          = 0.3
+  s.version          = '0.3'
   s.summary          = "Swift toolkit for Auth0 Guardian API"
   s.description      = <<-DESC
                         Auth0 Guardian API toolkit written in Swift for iOS apps
